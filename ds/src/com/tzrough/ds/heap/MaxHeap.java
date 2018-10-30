@@ -24,7 +24,9 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T>
 		 * 2> 此节点为叶子节点
 		 * 3> 此节点不需要调整位置
 		 * 
-		 * 若左孩子为最后一个节点，则需要判断右孩子是否越界
+		 * 临界条件
+		 * 左孩子为最后一个节点  leftChild = heapSize - 1
+		 * 此时需要判断右孩子是否越界 rightChild <= heapSize - 1
 		 */
 		if(leftChild > heapSize - 1)
 			return;
@@ -51,7 +53,7 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T>
 		 * 1> 若右孩子值大于父节点，则记录较大值下标为右孩子
 		 * 2> 若右孩子值小于父节点，则记录较大值下标为当前节点(父节点)
 		 */
-		if(rightChild < heapSize -1 && data[largest].compareTo(data[rightChild]) < 0)
+		if(rightChild <= heapSize - 1 && data[largest].compareTo(data[rightChild]) < 0)
 			largest = rightChild;
 		
 		/* 若孩子节点值大于当前节点(父节点)

@@ -14,6 +14,7 @@ public class HeapTest
 		MaxHeap<Integer> maxHeap = new MaxHeap<Integer>(data);
 		
 		maxHeap.add(1);
+		maxHeap.add(10);
 		
 		maxHeap.print();
 	}
